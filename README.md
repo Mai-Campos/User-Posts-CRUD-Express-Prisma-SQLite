@@ -8,7 +8,7 @@ Esta es una API REST desarrollada con **Node.js**, **Express**, **Prisma ORM** y
 - Express
 - Prisma ORM
 - SQLite
-- Nodemon (para desarrollo)
+
 
 ## 📦 Instalación
 ### 1. Clona el repositorio:
