@@ -3,6 +3,7 @@ import { PORT } from './config.js'
 import { PrismaClient } from '@prisma/client'
 import userRoutes from "./routes/users.route.js";
 import postRoutes from './routes/posts.route.js'
+import {errorHandler} from './middleware/errorHandler.js'
 
 const app = express();
 const prisma = new PrismaClient();
@@ -16,7 +17,8 @@ app.get('/', (_req, res) => {
 });
 
 app.use("/users", userRoutes);
-app.use("/posts",postRoutes)
+app.use("/posts",postRoutes);
+app.use(errorHandler);
 
 
 app.listen(PORT, () => console.log(`Server on port: ${PORT}`));
